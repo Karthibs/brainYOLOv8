@@ -53,7 +53,14 @@ from .block import (
     RepVGGDW,
     ResNetLayer,
     SCDown,
+    Faster_Block,
+    FEM,
+    SCAM,
+    FFM_Concat3,
+    FFM_Concat2
+    
 )
+
 from .conv import (
     CBAM,
     ChannelAttention,
@@ -150,4 +157,9 @@ __all__ = (
     "Attention",
     "PSA",
     "SCDown",
+    "Faster_Block",
+    "FEM",
+    "SCAM",
+    "FFM_Concat2",
+    "FFM_Concat3"
 )

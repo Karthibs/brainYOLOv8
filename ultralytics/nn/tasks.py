@@ -7,6 +7,7 @@ from pathlib import Path
 import torch
 import torch.nn as nn
 
+
 from ultralytics.nn.modules import (
     AIFI,
     C1,
@@ -54,8 +55,15 @@ from ultralytics.nn.modules import (
     SCDown,
     Segment,
     WorldDetect,
-    v10Detect,
+    v10Detect, 
+    FEM,
+    SCAM,
+    FFM_Concat2,
+    FFM_Concat3,
+    
 )
+
+
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
 from ultralytics.utils.loss import (
@@ -939,6 +947,10 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             PSA,
             SCDown,
             C2fCIB,
+            FEM,
+            SCAM,
+            FFM_Concat3,
+            FFM_Concat2,
         }:
             c1, c2 = ch[f], args[0]
             if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
